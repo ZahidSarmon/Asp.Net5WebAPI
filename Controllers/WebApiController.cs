@@ -32,16 +32,18 @@ namespace api.Controllers
                 try
                 {
                     string pageSize = Request.Headers["PageSize"];
+                    List<Names> list=new List<Names>();
                     foreach(string item in objData)
                     {
                         Names obj=new Names();
                         obj.Name=item;
                         obj.PageSize=Convert.ToInt32(pageSize);
+                        list.Add(obj);
                         _dbContext.Names.Add(obj);
                         _dbContext.SaveChanges();
                     }
                     _dbContextTransaction.Commit();
-                    return Ok(true);
+                    return Ok(list);
                 }
                 catch (Exception ex)
                 {
