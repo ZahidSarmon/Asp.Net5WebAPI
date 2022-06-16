@@ -79,7 +79,6 @@ namespace api
             })
             .AddIdentityCookies(o => { });
             services.AddControllers();
-            services.AddScoped<IRUnit, RUnit>();
 
             //docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-3.1
             services.Configure<IdentityOptions>(options =>

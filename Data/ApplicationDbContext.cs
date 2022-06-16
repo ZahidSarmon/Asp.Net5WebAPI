@@ -10,8 +10,7 @@ namespace api.Data
             : base(options)
         {
         }
-        public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<VMList> VMList { get; set; }
+        public virtual DbSet<Names> Names { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
